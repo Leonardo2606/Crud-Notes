@@ -18,3 +18,9 @@ export function newCategory(category) {
         payload: category
     }
 }
+
+export function deleteCategory() {
+    return {
+        type: 'deleteCategory'
+    }
+}
