@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { CategoriesSection, CategoriesList, CategoriesInput } from '../styled';
-import {newCategory} from '../store/actions/notes_categories.actions';
+import { newCategory, deleteCategory } from '../store/actions/notes_categories.actions';
 
 
 function Categories() {
@@ -18,10 +18,12 @@ function Categories() {
                     return <li>{category}</li>
                 })}
             </CategoriesList>
-            <CategoriesInput onKeyUp={event=>{
+            <CategoriesInput onKeyDown={event=>{
                 if(event.key==='Enter'){
                     dispatch(newCategory(event.target.value));
                     event.target.value = '';
+                } else if(event.key==='Backspace' && event.target.value == 0){
+                    dispatch(deleteCategory());
                 }}}
                 type='text' 
                 placeholder='Categorias'
