@@ -10,7 +10,7 @@ function Note() {
 
     const [title, setTitle] = useState('');
     const [text, setText] = useState('');
-    const [category, setCategorie] = useState('');
+    const [category, setCategorie] = useState('Sem categoria');
     const note = {title, text, category};
 
     return (
