@@ -2,31 +2,8 @@ body {
   background-color: rgb(46, 78, 126);
 }
 
-.container {
-  display: flex;
-}
-
-.title-and-notecreator {
-  background-color: rgba(255, 255, 255, 0.658);
-  min-width: 25%;
-  text-align: center;
-  padding: 10px;
-  max-height: 328px;
-  position: sticky;
-  top: 0;
-  left: 0;
-}
 
 .title {
   margin: 0;
   margin-bottom: 10px;
-}
-
-.list_and_categories {
-  display: grid;
-  grid-template-columns: 100%;
-  grid-template-rows: 50px auto;
-  margin: 0;
-  padding: 0;
-  width: 100%;
 }

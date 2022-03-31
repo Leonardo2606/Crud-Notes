@@ -1,5 +1,42 @@
 import styled from 'styled-components';
 
+export const Container = styled.div`
+    display: flex;
+    @media(max-width: 1100px) {
+        display: block;
+    }
+`
+
+export const NoteCreatorContainer = styled.section`
+    background-color: rgba(255, 255, 255, 0.658);
+    width: 30%;
+    max-height: 330px;
+    text-align: center;
+    padding: 10px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    @media(max-width: 1100px) {
+        position: relative;
+        margin: auto;
+        width: 50%;
+    } 
+    @media(max-width: 600px) {
+        width: 80%;
+    }
+`
+export const ListCategoriesContainer = styled.main`
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 50px auto;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    @media(max-width: 600px) {
+        display: block;
+    }
+`
+
 /* NoteCreation Component*/
 
 export const Select = styled.select`
@@ -10,6 +47,10 @@ export const Form = styled.form`
     width: 100%;
     display: grid;
     grid-template-columns: 100%;
+`
+
+export const TextArea = styled.textarea`
+    resize: none;
 `
 
 export const CreatNoteButton = styled.button`
@@ -60,7 +101,12 @@ export const CategoriesList = styled.ul`
     list-style: none;
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
     color: white;
+    @media(max-width: 600px) {
+        margin-right: 20px;
+        padding: 0 0 0 5px;
+    }
 `
 
 export const CategoriesInput = styled.input`
@@ -87,6 +133,9 @@ export const CardNote = styled.article`
     padding: 10px;  
     margin: 10px;
     position: relative;
+    @media(max-width:600px){
+        margin:5px;
+    }
 ` 
 export const BaseBoard = styled.footer`
     max-height: 80px;

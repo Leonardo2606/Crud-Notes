@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {useSelector, useDispatch} from 'react-redux'
 import {newNote} from '../store/actions/notes_categories.actions';
-import { Select, Form, CreatNoteButton, InputLabel} from '../styled';
+import { Select, Form, CreatNoteButton, InputLabel, TextArea } from '../styled';
 
 function Note() {
 
@@ -20,7 +20,7 @@ function Note() {
             }}
             className='noteSection'>
             <Select onChange={event=>setCategorie(event.target.value)}>
-                <option selected>Sem categoria</option>
+                <option defaultValue={'Sem categoria'}>Sem categoria</option>
                 {categoryArray.map(category=>{
                     return <option>{category}</option>
                 })}
@@ -32,10 +32,10 @@ function Note() {
                 id='noteTitle'
             />
             <InputLabel htmlFor='noteText'>Texto</InputLabel>
-            <textarea 
-                onChange={event=>setText(event.target.value)} 
-                rows='10' 
-                id='notetext'
+            <TextArea 
+                onChange={event=>setText(event.target.value)}
+                id='noteText'
+                rows={10}
             />
             <CreatNoteButton
                 onClick={()=>{dispatch(newNote(note))}} 

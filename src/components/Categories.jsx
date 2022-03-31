@@ -22,7 +22,7 @@ function Categories() {
                 if(event.key==='Enter'){
                     dispatch(newCategory(event.target.value));
                     event.target.value = '';
-                } else if(event.key==='Backspace' && event.target.value == 0){
+                } else if(event.key==='Backspace' && event.target.value.length === 0){
                     dispatch(deleteCategory());
                 }}}
                 type='text' 
