@@ -1,10 +1,8 @@
-import {createStore, combineReducers} from 'redux';
-import categoriesArray from './reducers/categories.reducer';
-import notesArray from './reducers/notes.reducer';
+import { configureStore } from '@reduxjs/toolkit';
+import notesReducer from './reducers/notesReducer';
 
-const combinedReducers = combineReducers({
-    category: categoriesArray,
-    note: notesArray
+const store = configureStore({
+    reducer: {notes: notesReducer}
 })
 
-export const store = createStore(combinedReducers);
+export default store;
