@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
 import {useSelector, useDispatch} from 'react-redux'
-import {newNote} from '../store/actions/notes_categories.actions';
+import {newNote} from '../store/reducers/notesReducer';
 import { Select, Form, CreatNoteButton, InputLabel, TextArea } from '../styled';
 
 function Note() {
 
     const dispatch = useDispatch();
-    const categoryArray = useSelector(state => state.category);
+    const categoryArray = useSelector(state => state.notes.categories);
 
     const [title, setTitle] = useState('');
     const [text, setText] = useState('');
@@ -21,8 +21,8 @@ function Note() {
             className='noteSection'>
             <Select onChange={event=>setCategorie(event.target.value)}>
                 <option defaultValue={'Sem categoria'}>Sem categoria</option>
-                {categoryArray.map(category=>{
-                    return <option>{category}</option>
+                {categoryArray.map((category, index)=>{
+                    return <option key={index}>{category}</option>
                 })}
             </Select>
             <InputLabel htmlFor='noteTitle'>Titulo</InputLabel>

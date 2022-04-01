@@ -1,7 +1,7 @@
 import React from 'react';
 import {Category, CardNote, DeleteNoteIcon} from '../styled';
 import trash from '../assets/trash.png';
-import {deleteNote} from '../store/actions/notes_categories.actions';
+import {deleteNote} from '../store/reducers/notesReducer';
 import {useDispatch} from 'react-redux';
 
 

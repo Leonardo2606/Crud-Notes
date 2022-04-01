@@ -1,21 +1,26 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { CategoriesSection, CategoriesList, CategoriesInput } from '../styled';
-import { newCategory, deleteCategory } from '../store/actions/notes_categories.actions';
+import { CategoriesSection, CategoriesList, CategoriesInput, CategoryItem } from '../styled';
+import { newCategory, deleteCategory, deleteCategoryClick } from '../store/reducers/notesReducer';
 
 
 function Categories() {
 
     const dispatch = useDispatch();
-    const categoryArray = useSelector(state => state.category);
+    const categoryArray = useSelector(state => state.notes.categories);
 
 
     return (
 
         <CategoriesSection>
             <CategoriesList>
-                {categoryArray.map(category=>{
-                    return <li>{category}</li>
+                {categoryArray.map((category, index)=>{
+                    return  <CategoryItem 
+                                key={index}
+                                onClick={()=>dispatch(deleteCategoryClick(index))}
+                            >
+                                    {category}
+                            </CategoryItem>
                 })}
             </CategoriesList>
             <CategoriesInput onKeyDown={event=>{

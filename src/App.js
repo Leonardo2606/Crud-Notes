@@ -4,7 +4,7 @@ import Categories from './components/Categories';
 import Note from './components/Note';
 import NoteList from './components/NoteList';
 import {Provider} from 'react-redux'
-import {store} from './store/store';
+import store from './store/store'
 import { NoteCreatorContainer, ListCategoriesContainer, Container } from './styled';
 
 function App() {

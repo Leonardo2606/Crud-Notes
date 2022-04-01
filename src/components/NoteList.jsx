@@ -5,12 +5,12 @@ import { NotesList } from '../styled';
 
 function NoteList() {
 
-    const notesArray = useSelector(state => state.note);
+    const notesArray = useSelector(state => state.notes.notes);
 
     return (
         <NotesList>
             {notesArray.map((note, index)=>{
-                return <NoteCard note={note} index={index}/>
+                return <NoteCard key={index} note={note} index={index}/>
             })}
         </NotesList>
     )
