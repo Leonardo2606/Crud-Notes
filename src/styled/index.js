@@ -10,7 +10,8 @@ export const Container = styled.div`
 export const NoteCreatorContainer = styled.section`
     background-color: rgba(255, 255, 255, 0.658);
     width: 30%;
-    max-height: 330px;
+    height: 331px;
+    max-height: 331px;
     text-align: center;
     padding: 10px;
     position: sticky;
@@ -109,9 +110,19 @@ export const CategoriesList = styled.ul`
     }
 `
 
+export const CategoryItem = styled.li`
+    margin: 0 5px;
+    :hover{
+        cursor: pointer;
+    }
+`
+
 export const CategoriesInput = styled.input`
     padding: 3px;
     margin-right: 5px;
+    @media(max-width: 600px) {
+        width: 100px;
+    }
 `
 
 /* Categories component*/
